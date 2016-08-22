@@ -13,6 +13,31 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="gameOfThrones" class="com.springapp.mvc.domain.GameOfThrones">
+        <constructor-arg value="Game of Thrones: A Song Of Ice And Fire"/>
+    </bean>
+
+    <bean id="harryPotter" class="com.springapp.mvc.domain.HarryPotter">
+        <constructor-arg value="Harry Potter: Cursed Child"/>
+    </bean>
+
+    <bean id ="bookRepository" class="com.springapp.mvc.repositories.BookRepository">
+        <constructor-arg>
+            <list>
+                <ref bean="gameOfThrones" />
+                <ref bean="harryPotter" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="bookService" class="com.springapp.mvc.services.BookService">
+        <constructor-arg ref="bookRepository" />
+    </bean>
+
+    <bean id="indexController" class="com.springapp.mvc.controllers.IndexController">
+        <constructor-arg ref="bookService" />
+    </bean>
+
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <mvc:annotation-driven />

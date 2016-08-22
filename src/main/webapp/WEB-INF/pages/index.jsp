@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -13,6 +13,12 @@
     </header>
     <section>
         <h2 id="welcome-tagline">Welcome To Biblioteca</h2>
+        <p>Currently In Stock Books:</p>
+        <ul id="instockBooks">
+            <c:forEach var="book" items="${inStockBooks}">
+                <li class="bookTitles"><c:out value="${book.getTitle()}"/></li>
+            </c:forEach>
+        </ul>
     </section>
 </body>
 </html>
