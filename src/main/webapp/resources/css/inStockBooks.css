@@ -1,0 +1,12 @@
+#instockBooks {
+    list-style-type: none;
+}
+
+.bookTitles {
+    text-align: center;
+}
+
+#book-details {
+    text-decoration: none;
+    color: #000;
+}
