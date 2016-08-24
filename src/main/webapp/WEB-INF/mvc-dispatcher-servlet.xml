@@ -14,11 +14,17 @@
     </bean>
 
     <bean id="gameOfThrones" class="com.springapp.mvc.domain.GameOfThrones">
+        <constructor-arg value="1" />
         <constructor-arg value="Game of Thrones: A Song Of Ice And Fire"/>
+        <constructor-arg value="George R.R. Martin" />
+        <constructor-arg value="August 1, 1996" />
     </bean>
 
     <bean id="harryPotter" class="com.springapp.mvc.domain.HarryPotter">
+        <constructor-arg value="2" />
         <constructor-arg value="Harry Potter: Cursed Child"/>
+        <constructor-arg value="J.K. Rowling" />
+        <constructor-arg value="July 15, 2016" />
     </bean>
 
     <bean id ="bookRepository" class="com.springapp.mvc.repositories.BookRepository">
@@ -35,7 +41,11 @@
     </bean>
 
     <bean id="indexController" class="com.springapp.mvc.controllers.IndexController">
+    </bean>
+
+    <bean id="bookController" class="com.springapp.mvc.controllers.BookController">
         <constructor-arg ref="bookService" />
+        <constructor-arg ref="bookRepository" />
     </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>

@@ -1,34 +1,18 @@
-body {
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #bfb9b9;
-}
-
-#logo {
-    padding: 10px;
-}
-
-#logo a {
-    color: #000;
-    text-decoration: none;
-}
-
 #welcome-tagline {
     text-align: center;
 }
 
-p {
+h3 {
     text-align: center;
-    font-weight: bold;
+}
+.menu-buttons {
+    margin-left: 620px;
+    width: 150px;
+    height: 40px;
+    background-color: #fff;
 }
 
-#instockBooks {
-    list-style-type: none;
-}
-
-.bookTitles {
-    text-align: center;
+.menu-links {
+    color: #000;
+    text-decoration: none;
 }

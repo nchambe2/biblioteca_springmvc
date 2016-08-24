@@ -20,4 +20,16 @@ public class BookRepository {
     public List<Book> getInStockBooks() {
         return inStockBooks;
     }
+
+    public Book find(String bookId) {
+        Book bookToBeDisplayed = null;
+
+        for(Book book : inStockBooks) {
+            if(book.getId().equals(bookId)) {
+                bookToBeDisplayed = book;
+            }
+        }
+
+        return bookToBeDisplayed;
+    }
 }

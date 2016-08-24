@@ -20,4 +20,8 @@ public class BookService {
     public List<Book> getInStockBooks() {
         return bookRepository.getInStockBooks();
     }
+
+    public String getBookDetails() {
+        return null;
+    }
 }

@@ -3,22 +3,20 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Biblioteca</title>
     <%--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">--%>
-    <link rel="stylesheet" href="<c:url value='../../resources/css/index.css'/>" />
-    <title>Welcome</title>
+    <link re="stylesheet" href="<c:url value='/resources/css/main.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/resources/css/index.css'/>" />
+    <link rel="stylesheet" href="<c:url value='/resources/css/header.css'/>" />
+    <title>Biblioteca</title>
 </head>
+
 <body>
-    <header>
-        <h1 id="logo"><a href="#">Biblioteca</a></h1>
-    </header>
+    <%@ include file="../partials/_header.jsp" %>
     <section>
         <h2 id="welcome-tagline">Welcome To Biblioteca</h2>
-        <p>Currently In Stock Books:</p>
-        <ul id="instockBooks">
-            <c:forEach var="book" items="${inStockBooks}">
-                <li class="bookTitles"><c:out value="${book.getTitle()}"/></li>
-            </c:forEach>
-        </ul>
+        <h3>Menu Options:</h3>
+        <button class="menu-buttons"><a class="menu-links" href="/viewBooks">View In Stock Books</a></button>
     </section>
 </body>
 </html>
