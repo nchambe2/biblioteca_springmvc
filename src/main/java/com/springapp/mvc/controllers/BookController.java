@@ -3,11 +3,11 @@ package com.springapp.mvc.controllers;
 import com.springapp.mvc.repositories.BookRepository;
 import com.springapp.mvc.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class BookController {
@@ -27,11 +27,18 @@ public class BookController {
         return "inStockBooks";
     }
 
-    @RequestMapping(value="/{bookId}", method= RequestMethod.GET)
+    @RequestMapping(value="/{bookId}", method=RequestMethod.GET)
     public String displayBookDetails(@PathVariable("bookId") String bookId,
                                      ModelMap modelMap) {
 
         modelMap.addAttribute("book", bookRepository.find(bookId));
         return "bookDetails";
     }
+
+    @RequestMapping(value="/checkout", method=RequestMethod.POST)
+    public ResponseEntity<String> checkout(@RequestBody String bookId) {
+        bookService.checkout(bookId);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }

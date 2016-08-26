@@ -25,3 +25,9 @@ public class IndexControllerTest {
         assertThat(indexController.displayIndex(), is("index"));
     }
 }
+
+//checkoutbooks - should show all in stock books and next to them show the removeBookFromInStockBooksList button
+//if you are checking out a book that should happen in the book service
+//find the book in the instock books based on the id
+//re
+//checkoutbooks

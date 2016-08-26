@@ -28,6 +28,7 @@ public class BookRepositoryTest {
         inStockBooks = new ArrayList<>();
         bookRepository = new BookRepository(inStockBooks);
         book = mock(Book.class);
+        inStockBooks.add(book);
     }
 
     @Test
@@ -37,12 +38,19 @@ public class BookRepositoryTest {
 
     @Test
     public void shouldReturnBookDetailsWhenIdIsFound() {
-        inStockBooks.add(book);
         when(book.getId()).thenReturn("1");
 
         assertThat(bookRepository.find("1"), is(book));
     }
 
+    @Test
+    public void shouldRemoveBookFromInStockBooksListWhenCheckingOut() {
+        when(book.getId()).thenReturn("1");
+
+        bookRepository.removeBookFromInStockBooksList("1");
+
+        assertThat(inStockBooks.size(), is(0));
+    }
 
 
 }

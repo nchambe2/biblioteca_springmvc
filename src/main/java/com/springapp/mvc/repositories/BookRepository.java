@@ -32,4 +32,16 @@ public class BookRepository {
 
         return bookToBeDisplayed;
     }
+
+    public void removeBookFromInStockBooksList(String bookId) {
+        Book bookToRemove = null;
+
+        for(Book book : inStockBooks) {
+            if(book.getId().equals(bookId)) {
+                bookToRemove = book;
+            }
+        }
+
+        inStockBooks.remove(bookToRemove);
+    }
 }

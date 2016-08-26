@@ -21,7 +21,7 @@ public class BookService {
         return bookRepository.getInStockBooks();
     }
 
-    public String getBookDetails() {
-        return null;
+    public void checkout(String bookId) {
+        bookRepository.removeBookFromInStockBooksList(bookId);
     }
 }

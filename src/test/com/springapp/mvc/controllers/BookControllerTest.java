@@ -12,7 +12,9 @@ import org.springframework.ui.ModelMap;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
@@ -53,6 +55,13 @@ public class BookControllerTest {
         bookController.displayBookDetails("1", modelMap);
 
         assertThat(modelMap, hasEntry("book", bookRepository.find("1")));
+    }
+
+    @Test
+    public void shouldCallBookServiceWhenCheckingOutABook() {
+        bookController.checkout(anyString());
+
+        verify(bookService).checkout(anyString());
     }
 
 
