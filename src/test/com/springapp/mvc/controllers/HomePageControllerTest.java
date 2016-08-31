@@ -11,18 +11,18 @@ import static org.junit.Assert.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml")
-public class IndexControllerTest {
+public class HomePageControllerTest {
 
-    private IndexController indexController;
+    private HomePageController homePageController;
 
     @Before
     public void setUp() throws Exception {
-        indexController = new IndexController();
+        homePageController = new HomePageController();
     }
 
     @Test
     public void shouldReturnIndexViewWhenRootRouteIsHit() {
-        assertThat(indexController.displayIndex(), is("index"));
+        assertThat(homePageController.displayIndex(), is("index"));
     }
 }
 

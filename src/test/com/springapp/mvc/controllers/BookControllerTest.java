@@ -3,6 +3,7 @@ package com.springapp.mvc.controllers;
 import com.springapp.mvc.repositories.BookRepository;
 import com.springapp.mvc.services.BookService;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -31,18 +32,6 @@ public class BookControllerTest {
         bookRepository = mock(BookRepository.class);
         bookService = mock(BookService.class);
         bookController = new BookController(bookRepository, bookService);
-    }
-
-    @Test
-    public void shouldReturnInStockBooksWhenViewBooksRouteIsHit() {
-       assertThat(bookController.displayInStockBooks(modelMap), is("inStockBooks"));
-    }
-
-    @Test
-    public void shouldHaveMapOfInStockBooksWhenViewBooksRouteIsHit() {
-        bookController.displayInStockBooks(modelMap);
-
-        assertThat(modelMap, hasEntry("inStockBooks", bookService.getInStockBooks()));
     }
 
     @Test

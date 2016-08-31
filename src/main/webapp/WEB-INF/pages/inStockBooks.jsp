@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="<c:url value='/resources/css/header.css'/>" />
 </head>
 
+
+<%--availabe books not centerned left justified --%>
+<%--navigation is still available --%>
     <body>
         <%@ include file="../partials/_header.jsp" %>
         <section>

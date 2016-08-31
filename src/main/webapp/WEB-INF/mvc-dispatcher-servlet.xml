@@ -40,13 +40,18 @@
         <constructor-arg ref="bookRepository" />
     </bean>
 
-    <bean id="indexController" class="com.springapp.mvc.controllers.IndexController">
+    <bean id="homePageController" class="com.springapp.mvc.controllers.HomePageController">
     </bean>
 
-    <bean id="bookController" class="com.springapp.mvc.controllers.BookController">
-        <constructor-arg ref="bookService" />
-        <constructor-arg ref="bookRepository" />
+    <bean id="availableBooksController" class="com.springapp.mvc.controllers.AvailableBooksController">
     </bean>
+
+    <!--<bean id="bookController" class="com.springapp.mvc.controllers.BookController">-->
+        <!--<constructor-arg ref="bookService" />-->
+        <!--<constructor-arg ref="bookRepository" />-->
+    <!--</bean>-->
+
+
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 

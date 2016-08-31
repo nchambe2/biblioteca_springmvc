@@ -9,6 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+
+//not just about books doesn't seem specific to a book
+//split controller into a couple of different things
+
+//route naming
+//controller is for set of resouces Books
+
 @Controller
 public class BookController {
 
@@ -20,13 +27,7 @@ public class BookController {
         this.bookRepository = bookRepository;
         this.bookService = bookService;
     }
-
-    @RequestMapping(value="/viewBooks", method=RequestMethod.GET)
-    public String displayInStockBooks(ModelMap modelMap) {
-        modelMap.addAttribute("inStockBooks", bookService.getInStockBooks());
-        return "inStockBooks";
-    }
-
+    
     @RequestMapping(value="/{bookId}", method=RequestMethod.GET)
     public String displayBookDetails(@PathVariable("bookId") String bookId,
                                      ModelMap modelMap) {
@@ -35,6 +36,7 @@ public class BookController {
         return "bookDetails";
     }
 
+    @ResponseBody
     @RequestMapping(value="/checkout", method=RequestMethod.POST)
     public ResponseEntity<String> checkout(@RequestBody String bookId) {
         bookService.checkout(bookId);
