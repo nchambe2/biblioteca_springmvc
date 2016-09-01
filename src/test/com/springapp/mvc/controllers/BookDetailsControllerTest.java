@@ -30,12 +30,12 @@ public class BookDetailsControllerTest {
 
     @Test
     public void shouldReturnBookDetailsViewWhenCalled() {
-        assertThat(bookDetailsController.displayBookDetailsX("1", modelMap), is("bookDetails"));
+        assertThat(bookDetailsController.displayBookDetails("1", modelMap), is("bookDetails"));
     }
 
     @Test
     public void shouldReturnBookDetailsWhenBookIdIsFound() {
-        bookDetailsController.displayBookDetailsX("1", modelMap);
+        bookDetailsController.displayBookDetails("1", modelMap);
 
         assertThat(modelMap, hasEntry("book", bookRepository.find("1")));
     }

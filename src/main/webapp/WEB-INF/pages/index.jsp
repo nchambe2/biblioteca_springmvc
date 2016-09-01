@@ -16,7 +16,7 @@
     <section>
         <h2 id="welcome-tagline">Welcome To Biblioteca</h2>
         <h3>Menu Options:</h3>
-        <button class="menu-buttons"><a class="menu-links" href="/viewBooks">View In Stock Books</a></button>
+        <button class="menu-buttons"><a class="menu-links" href="/books">View In Stock Books</a></button>
     </section>
 </body>
 </html>

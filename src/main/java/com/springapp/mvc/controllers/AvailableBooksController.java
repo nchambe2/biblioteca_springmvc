@@ -17,7 +17,7 @@ public class AvailableBooksController {
         this.bookService = bookService;
     }
 
-    @RequestMapping(value="/viewBooks", method= RequestMethod.GET)
+    @RequestMapping(value="/books", method= RequestMethod.GET)
     public String displayInStockBooks(ModelMap modelMap) {
         modelMap.addAttribute("inStockBooks", bookService.getInStockBooks());
         return  "inStockBooks";

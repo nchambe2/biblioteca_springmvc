@@ -15,7 +15,11 @@
         <section>
             <ul id="instockBooks">
                 <c:forEach var="book" items="${inStockBooks}">
-                    <li class="bookTitles"><a id="book-details" href="${book.getId()}"><c:out value="${book.getTitle()}"/></a></li>
+                    <li class="bookTitles">
+                        <a id="book-details" href="books/${book.getId()}">
+                            <c:out value="${book.getTitle()}"/>
+                        </a>
+                    </li>
                 </c:forEach>
             </ul>
         </section>

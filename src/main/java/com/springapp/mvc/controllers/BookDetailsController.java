@@ -18,9 +18,9 @@ public class BookDetailsController {
         this.bookRepository = bookRepository;
     }
 
-    @RequestMapping(value="/{bookId}", method=RequestMethod.GET)
-    public String displayBookDetailsX(@PathVariable("bookId") String bookId,
-                                      ModelMap modelMap) {
+    @RequestMapping(value="books/{bookId}", method=RequestMethod.GET)
+    public String displayBookDetails(@PathVariable("bookId") String bookId,
+                                     ModelMap modelMap) {
         modelMap.addAttribute("book", bookRepository.find(bookId));
         return "bookDetails";
     }
