@@ -44,14 +44,16 @@
     </bean>
 
     <bean id="availableBooksController" class="com.springapp.mvc.controllers.AvailableBooksController">
+        <constructor-arg ref="bookService" />
     </bean>
 
-    <!--<bean id="bookController" class="com.springapp.mvc.controllers.BookController">-->
-        <!--<constructor-arg ref="bookService" />-->
-        <!--<constructor-arg ref="bookRepository" />-->
-    <!--</bean>-->
+    <bean id="bookDetailsController" class="com.springapp.mvc.controllers.BookDetailsController">
+        <constructor-arg ref="bookRepository" />
+    </bean>
 
-
+    <bean id="checkoutController" class="com.springapp.mvc.controllers.CheckoutController">
+        <constructor-arg ref="bookService" />
+    </bean>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
